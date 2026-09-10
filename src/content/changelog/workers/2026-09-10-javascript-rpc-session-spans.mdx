@@ -1,0 +1,14 @@
+---
+title: Workers traces now include JavaScript RPC session spans
+description: Workers traces now include JavaScript RPC session spans for Worker-to-Worker and Worker-to-Durable Object calls.
+products:
+  - workers
+  - durable-objects
+date: 2026-09-10
+---
+
+Workers traces now include RPC session spans alongside individual RPC call spans for JavaScript RPC. A session span covers the lifetime of a caller-side RPC session and groups calls that reuse that session.
+
+RPC tracing covers Worker-to-Worker and Worker-to-Durable Object calls. Together, session and call spans show the parent-child relationship between the originating invocation and its RPC calls.
+
+[Tracing must be enabled](/workers/observability/traces/#how-to-enable-tracing) in your Wrangler configuration for these spans to be recorded. For supported spans and attributes, refer to [Spans and attributes](/workers/observability/traces/spans-and-attributes/).
